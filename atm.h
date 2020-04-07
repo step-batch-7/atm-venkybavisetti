@@ -18,5 +18,15 @@
    2590 0x11012000
   31999 0xf3412014
 */
-unsigned int get_money(unsigned short int);
+
+#define ATM_LIMIT 31999
+#define DENOMINATION_LIST            \
+  {                                  \
+    2000, 500, 100, 50, 20, 10, 5, 1 \
+  }
+
+typedef unsigned short int RS;
+typedef int rupee[8];
+
+unsigned int get_money(RS);
 void display_notes(unsigned int notes);
